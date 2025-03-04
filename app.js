@@ -92,9 +92,7 @@ function drawLPBFProcessMap() {
       coloring: 'fill',
       showlines: false
     },
-    colorbar: {
-      title: 'Process Map'
-    }
+    showscale: false
   }];
 
   const layout = {
