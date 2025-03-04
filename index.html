@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Process Mapping</title>
+    <link rel="stylesheet" type="text/css" href="./style.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>    
+</head>
+
+<body>
+    <div class="app">
+      <div class="title">L-PBF Process Map</div>
+      
+      <div id="plotlyDiv" class="graph"></div>
+      
+      <div class="controls">
+        <div class="heading">Material Parameters</div>
+        
+        <div class="control">
+          <label for="rho">Density</label>
+          <div class="input_box">
+            <input type="number" id="rho" value="7800" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[kg/m³]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="c">Specific Heat</label>
+          <div class="input_box">
+            <input type="number" id="c" value="460" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[J/(kg-K)]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="tf">Melting Temperature</label>
+          <div class="input_box">
+            <input type="number" id="tf" value="1678" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[K]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="a">Absorptivity</label>
+          <div class="input_box">
+            <input type="number" id="a" value="0.4" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[-]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="hs">Enthalpy at Melting</label>
+          <div class="input_box">
+            <input type="number" id="hs" value="1200" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[kJ/kg]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="d_l">Thermal Diffusivity (Liquid)</label>
+          <div class="input_box">
+            <input type="number" id="d_l" value="5.38e-6" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[m²/s]</div>
+          </div>
+        </div>
+        
+        <div class="heading">Process Inputs</div>
+        
+        <div class="control">
+          <label for="t0">Preheat Temperature</label>
+          <div class="input_box">
+            <input type="number" id="t0" value="373" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[K]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="hatch">Hatch Spacing</label>
+          <div class="input_box">
+            <input type="number" id="hatch" value="90" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[µm]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="layer">Layer Thickness</label>
+          <div class="input_box">
+            <input type="number" id="layer" value="40" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[µm]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="sigma">Laser Spot Size</label>
+          <div class="input_box">
+            <input type="number" id="sigma" value="93" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[µm]</div>
+          </div>
+        </div>
+        
+        <div class="heading">Simulation Parameters</div>
+        
+        <div class="control">
+          <label for="pmin">Min. Power</label>
+          <div class="input_box">
+            <input type="number" id="pmin" value="50" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[W]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="pmax">Max. Power</label>
+          <div class="input_box">
+            <input type="number" id="pmax" value="500" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[W]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="vmin">Min. Velocity</label>
+          <div class="input_box">
+            <input type="number" id="vmin" value="0.05" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[m/s]</div>
+          </div>
+        </div>
+        
+        <div class="control">
+          <label for="vmax">Maximum Velocity</label>
+          <div class="input_box">
+            <input type="number" id="vmax" value="2.0" step="any" onchange="drawLPBFProcessMap()">
+            <div class="unit">[m/s]</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <script src="app.js"></script>
+  </body>
+  </html>
